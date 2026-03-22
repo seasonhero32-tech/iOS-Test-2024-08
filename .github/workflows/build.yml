@@ -12,7 +12,7 @@ jobs:
         
       - name: Build iOS App (Unsigned)
         run: |
-          xcodebuild -project iOS-Test.xcodeproj -scheme iOS-Test -sdk iphoneos -configuration Release clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild -project iOS-Test.xcodeproj -target "iOS-Test" -sdk iphoneos -configuration Release clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO SYMROOT=$PWD/build
           
       - name: Package into IPA
         run: |
